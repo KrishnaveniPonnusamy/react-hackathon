@@ -11,16 +11,12 @@ function CardContainer({hotels, setHotels}){
   }, []);
    
       return (
-        <div>
-          <Filter />
-          {hotels.map((hotel,i)=>{
-              return(
-              <CardView hotelName={hotel.name} hotelDescription={hotel.description}/>
-              )
-            })
-          }
-        </div>
-      );
+        hotels.map((hotel,i)=>{
+          return(
+          <CardView hotelName={hotel.name} hotelDescription={hotel.description} hotelPic={hotel.hotelPic} key={i}/>
+          )
+        }
+    ))
   }
   
   const mapStateToProps = (state) => {
