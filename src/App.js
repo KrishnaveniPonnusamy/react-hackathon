@@ -1,13 +1,14 @@
-import CardContainer from './components/CardContainer';
+import CardContainer from './components/CardContainer/CardContainer';
 import React, {Component} from 'react';
 import './App.css';
-import Nav from './components/Nav';
-import AboutPage from './components/AboutPage';
-import ContactUs from './components/ContactUs';
+import Nav from './components/Nav/Nav';
+import AboutPage from './components/About/AboutPage';
+import ContactUs from './components/Contact/ContactUs';
 import HotelDetails from './components/HotelDetails'
 
 
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom';
+import Filter from './components/Filter/Filter';
 
 const App = () =>  {
 
@@ -30,9 +31,11 @@ const App = () =>  {
 }
 
 const Home = (props) =>(
-
-  <div className="home" style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
-    <CardContainer {...props} />
+  <div>
+    <Filter />
+    <div className="home" style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
+      <CardContainer {...props} />
+    </div>
   </div>
 )
 
