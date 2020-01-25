@@ -9,9 +9,9 @@ import HotelDetails from './components/HotelDetails'
 
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom';
 
-class App extends Component {
 
-  render(){
+
+  const App = () => {
 
     return(
       <Router>
@@ -29,7 +29,7 @@ class App extends Component {
 
     )
   }
-}
+
 
 const Home = () =>(
 
