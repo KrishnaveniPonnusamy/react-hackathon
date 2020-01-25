@@ -26,11 +26,15 @@ class HotelDetails extends React.Component{
             PaperStyle:{
                 padding:"50px",
                 marginTop:'42%'
+            },
+            hotelImage: {
+                width:"50%",
+                 height: "250px",
+                  marginRight: "10px", 
+                   marginLeft: "10px"
             }
         };
-        return (
-
-            
+        return (          
 
             <div>
                 <MapComponent/>
@@ -65,7 +69,7 @@ class HotelDetails extends React.Component{
                                     <h2>Price: {room.price}</h2>
                                 </div>
                                 <div style={styles.hotelImages}>{room.photos.map((photo, i) =>{ return(
-                                   <img src={photo.url} style={{width:"50%", height: "250px", marginRight: "10px",  marginLeft: "10px"}}/>
+                                   <img src={photo.url} style={styles.hotelImage}/>
                                 )}
                                 )}
                                 </div>
