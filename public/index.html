@@ -39,5 +39,17 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      function initMap() {
+        var map;
+            map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: -34.397, lng: 150.644},
+              zoom: 8
+            });
+            var marker = new google.maps.Marker({position: {lat: -34.397, lng: 150.644}, map: map});
+      }
+        </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWRyO-SVMRXrYUlobQwbcePm4Ax_aL6z0&callback=initMap"
+    async defer></script>
   </body>
 </html>
