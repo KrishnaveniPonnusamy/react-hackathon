@@ -40,12 +40,29 @@ class HotelDetails extends React.Component{
 };
     render(){
         const {name,rating,address, city, state, phNo, rooms} = this.state.hotel;
+
+        const styles = {
+            container: {
+                padding:"50px"
+            },
+            paper:{
+                marginBottom: "50px",
+                 padding:"20px"
+            },
+            hotelImages:{
+                display:"flex", 
+                flexDirection:"row"
+            }
+        };
         return (
 
             
 
             <div>
-                <Container maxWidth="lg" style={{padding:"20px"}}>
+
+
+
+                <Container maxWidth="lg" style={styles.container}>
                     <Paper>
                    <h1>Address:</h1>
                    <p>Hotel Name: {name}</p>
@@ -65,13 +82,13 @@ class HotelDetails extends React.Component{
                             
                             <Container elevation={3}>
                                  <h1>Room Details: </h1>
-                                <Paper style={{marginBottom: "50px", padding:"20px"}}>
+                                <Paper style={styles.paper}>
                                 <div>
                             
                                     <h2>Room Type: {room.type}</h2>
                                     <h2>Price: {room.price}</h2>
                                 </div>
-                                <div style={{display:"flex", flexDirection:"row"}}>{room.photos.map((photo, i) =>{ return(
+                                <div style={styles.hotelImages}>{room.photos.map((photo, i) =>{ return(
                                    <img src={photo.url} style={{width:"50%", height: "250px", marginRight: "10px",  marginLeft: "10px"}}/>
                                 )}
                                 )}
