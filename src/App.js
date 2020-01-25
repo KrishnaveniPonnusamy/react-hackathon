@@ -1,20 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {hotels} from './constants';
 import CardContainer from './components/CardContainer';
+import React, {Component} from 'react';
+import './App.css';
+import Nav from './components/Nav';
+import AboutPage from './components/AboutPage';
+import ContactUs from './components/ContactUs';
 
 
-function App() {
+import {BrowserRouter as Router,Switch, Route} from 'react-router-dom';
 
-  return (
-    <div className="App" style={{display:"flex",flexDirection:"row"}}>
-  
-     <CardContainer hotels={hotels}/>
-      
-    </div>
-  );
-  
+class App extends Component {
+
+  render(){
+
+    return(
+      <Router>
+        <div className="App">
+        <Nav/>
+        <Switch>
+          <Route path="/" exact component={Home}></Route>
+          <Route path='/about' component={AboutPage}></Route>
+          <Route path='/contact' component={ContactUs}></Route>  
+        </Switch>
+        </div>
+
+      </Router>
+
+    )
+  }
 }
+
+const Home = () =>(
+
+  <div className="home" style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
+    <CardContainer/>
+  </div>
+)
+
+
 
 export default App;

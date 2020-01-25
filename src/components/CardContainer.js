@@ -10,7 +10,7 @@ function CardContainer(){
       return (
         hotels.map((hotel,i)=>{
           return(
-          <CardView hotelName={hotel.name} hotelDescription={hotel.description}/>
+          <CardView hotelName={hotel.name} hotelDescription={hotel.description} hotelPic={hotel.hotelPic} key={i}/>
           )
         }
     ))
