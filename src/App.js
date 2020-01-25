@@ -9,9 +9,8 @@ import HotelDetails from './components/HotelDetails'
 
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom';
 
-class App extends Component {
+const App = () =>  {
 
-  render(){
 
     return(
       <Router>
@@ -28,13 +27,12 @@ class App extends Component {
       </Router>
 
     )
-  }
 }
 
-const Home = () =>(
+const Home = (props) =>(
 
   <div className="home" style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
-    <CardContainer/>
+    <CardContainer {...props} />
   </div>
 )
 

@@ -1,3 +1,5 @@
+// card component which displayes each hotel details. takes hotel object through props
+
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -49,10 +51,15 @@ export default function MediaCard( props) {
         </CardContent>
       </CardActionArea>
       <CardActions style={{justifyContent:"space-evenly"}}>
-        <Button size="small" style={{color:"white" ,background:"green"}} >
-        <Link style={{ color: "white", fontWeight: "bold", textDecoration: "none" }} to='/hotelDetails'>
+        <Button size="small" style={{color:"white" ,background:"green"}} onClick={() => {
+          console.log(props);
+          props.history.push('/hotelDetails',
+            {...props.hotelObject}
+          )
+        }}>
                     Book Now
-                </Link>
+        {/* <Link style={{ color: "white", fontWeight: "bold", textDecoration: "none" }} to='/'>
+                </Link> */}
         </Button>
         <Button size="small" style={{color:"white" ,background:"green"}} >
           Learn More

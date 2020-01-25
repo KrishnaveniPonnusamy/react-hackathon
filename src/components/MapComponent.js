@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Container from '@material-ui/core/Container';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 var MapComponent = ({google}) => {
   const styles = {
@@ -13,8 +13,12 @@ var MapComponent = ({google}) => {
         <Map
           google={google}
           zoom={6}
-          initialCenter={{ lat: 47.444, lng: -122.176}}
-        />
+        >
+           <Marker
+    name={'Dolores park'}
+    position={{lat: 37.759703, lng: -122.428093}} />
+  <Marker />
+        </Map>
         </Container>
     )
 }
