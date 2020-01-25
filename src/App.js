@@ -1,12 +1,13 @@
-import CardContainer from './components/CardContainer';
+import CardContainer from './components/CardContainer/CardContainer';
 import React, {Component} from 'react';
 import './App.css';
-import Nav from './components/Nav';
-import AboutPage from './components/AboutPage';
-import ContactUs from './components/ContactUs';
+import Nav from './components/Nav/Nav';
+import AboutPage from './components/About/AboutPage';
+import ContactUs from './components/Contact/ContactUs';
 
 
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom';
+import Filter from './components/Filter/Filter';
 
 class App extends Component {
 
@@ -30,9 +31,11 @@ class App extends Component {
 }
 
 const Home = () =>(
-
-  <div className="home" style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
-    <CardContainer/>
+  <div>
+    <Filter />
+    <div className="home" style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
+      <CardContainer/>
+    </div>
   </div>
 )
 
