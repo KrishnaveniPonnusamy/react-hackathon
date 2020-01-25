@@ -33,9 +33,7 @@ const App = () =>  {
 const Home = (props) =>(
   <div>
     <Filter />
-    <div className="home" style={{display:"flex",flexDirection:"row",justifyContent:"space-between",marginTop:"8%"}}>
       <CardContainer {...props} />
-    </div>
   </div>
 )
 

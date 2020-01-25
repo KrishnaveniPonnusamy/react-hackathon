@@ -19,6 +19,11 @@ const hotelsState = (state = {list: []}, action) => {
                     return hotel.city.toLowerCase().includes(param.city);
                 })
             }
+            if(param.rating) {
+                updatedList = updatedList.filter((hotel) => {
+                    return hotel.rating == param.rating;
+                })
+            }
             return { list: updatedList}
         default:
             return state;

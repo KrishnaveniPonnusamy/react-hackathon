@@ -16,16 +16,20 @@ const Filter = ({searchHotels, clearFilter}) => {
         });
 
       };
+      const clearFilters = () => {
+        setState({name: '', city: '', rating: ''});
+        clearFilter();
+    }
     return (
         <form style={{marginTop:"5%"}}>
             <div className="search-input">
                 <div>
                     <label className="input-label">Name</label>
-                    <Input placeholder="Search hotel names" onChange={(e) => setState({name: e.target.value.toLowerCase()})}/>
+                    <Input placeholder="Search hotel names" onChange={(e) => setState({...state,name: e.target.value.toLowerCase()})}/>
                 </div>
                 <div>
                     <label className="input-label">City</label>
-                    <Input placeholder="Search hotels by city" onChange={(e) => setState({city: e.target.value.toLowerCase()})}/>
+                    <Input placeholder="Search hotels by city" onChange={(e) => setState({...state, city: e.target.value.toLowerCase()})}/>
                 </div>
                 <div>
                     <NativeSelect
@@ -47,7 +51,7 @@ const Filter = ({searchHotels, clearFilter}) => {
             </div>
             <div style={{marginTop:"2%"}}>
                 <Button style={{background:"black", color:"white", marginRight:20}} onClick={() => {searchHotel()}}>Search</Button>
-                <Button style={{background:"black", color:"white"}} onClick={() => {clearFilter()}}>Clear</Button>
+                <Button style={{background:"black", color:"white"}} onClick={() => {clearFilters()}}>Clear</Button>
             </div>
         </form>
     )
