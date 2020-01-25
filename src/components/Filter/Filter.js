@@ -5,25 +5,29 @@ import { Input, Button } from '@material-ui/core';
 import { setHotelsAction, searchHotels } from '../../redux/actions';
 import './Filter.css'
 const Filter = ({searchHotels, clearFilter}) => {
-    const [state, setState] = useState({name: '', city: '', price:null});
+    const [state, setState] = useState({name: '', city: '', rating:0});
     const searchHotel = (e) => {
             searchHotels(state);
+    }
+    const clearFilters = () => {
+        setState({name: '', city: '', rating: ''});
+        clearFilter();
     }
     return (
         <form>
             <div className="search-input">
                 <div>
                     <label className="input-label">Name</label>
-                    <Input placeholder="Search hotel names" onChange={(e) => setState({name: e.target.value.toLowerCase()})}/>
+                    <Input placeholder="Search hotel names" onChange={(e) => setState({...state,name: e.target.value.toLowerCase()})}/>
                 </div>
                 <div>
                     <label className="input-label">City</label>
-                    <Input placeholder="Search hotels by city" onChange={(e) => setState({city: e.target.value.toLowerCase()})}/>
+                    <Input placeholder="Search hotels by city" onChange={(e) => setState({...state, city: e.target.value.toLowerCase()})}/>
                 </div>
             </div>
             <div>
                 <Button onClick={() => {searchHotel()}}>Search</Button>
-                <Button onClick={() => {clearFilter()}}>Clear</Button>
+                <Button onClick={() => {clearFilters()}}>Clear</Button>
             </div>
         </form>
     )
