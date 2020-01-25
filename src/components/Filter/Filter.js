@@ -14,7 +14,7 @@ const Filter = ({searchHotels, clearFilter}) => {
         clearFilter();
     }
     return (
-        <form>
+        <form style={{marginTop:"5%"}}>
             <div className="search-input">
                 <div>
                     <label className="input-label">Name</label>
@@ -25,9 +25,9 @@ const Filter = ({searchHotels, clearFilter}) => {
                     <Input placeholder="Search hotels by city" onChange={(e) => setState({...state, city: e.target.value.toLowerCase()})}/>
                 </div>
             </div>
-            <div>
-                <Button onClick={() => {searchHotel()}}>Search</Button>
-                <Button onClick={() => {clearFilters()}}>Clear</Button>
+            <div style={{marginTop:"2%"}}>
+                <Button style={{background:"black", color:"white", marginRight:20}} onClick={() => {searchHotel()}}>Search</Button>
+                <Button style={{background:"black", color:"white"}} onClick={() => {clearFilters()}}>Clear</Button>
             </div>
         </form>
     )
