@@ -25,11 +25,11 @@ const Filter = ({searchHotels, clearFilter}) => {
             <div className="search-input">
                 <div>
                     <label className="input-label">Name</label>
-                    <Input placeholder="Search hotel names" onChange={(e) => setState({...state,name: e.target.value.toLowerCase()})}/>
+                    <Input placeholder="Search hotel names" value={state.name} onChange={(e) => setState({...state,name: e.target.value.toLowerCase()})}/>
                 </div>
                 <div>
                     <label className="input-label">City</label>
-                    <Input placeholder="Search hotels by city" onChange={(e) => setState({...state, city: e.target.value.toLowerCase()})}/>
+                    <Input placeholder="Search hotels by city" value={state.city} onChange={(e) => setState({...state, city: e.target.value.toLowerCase()})}/>
                 </div>
                 <div>
                     <NativeSelect
